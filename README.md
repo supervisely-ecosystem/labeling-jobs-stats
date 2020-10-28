@@ -7,7 +7,7 @@
 <p align="center">
 
   <a href="#Overview">Overview</a> •
-  <a href="#How-To-Run">How To Run</a>
+  <a href="#How-To-Run">How To Run</a> •
   <a href="#History-Of-Runs">History of runs</a>
 </p>
 
