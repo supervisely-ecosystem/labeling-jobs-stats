@@ -28,8 +28,8 @@ Report provides both high-level and detailed statistics for all labeling jobs in
 
 ### Step 1: Run from context menu of project
 
-Add app from ecosystem and run it from `Apps` page in your team.
+Add app from ecosystem. Go to `Apps` page and press `Run` button.
 
-<img src="https://i.imgur.com/0uTRa3V.png" width="600"/>
+<img src="https://i.imgur.com/qseZSxh.png"/>
 
 
