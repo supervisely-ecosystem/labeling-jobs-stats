@@ -22,7 +22,7 @@
 
 Report provides both high-level and detailed statistics for all labeling jobs in a team.
 
-<img src="https://i.imgur.com/93HaCC3.png"/>
+<img src="https://i.imgur.com/8OtF0I2.png"/>
 
 ## How To Run
 
