@@ -144,7 +144,7 @@ def count_images_statuses(jobs):
     return image_statuses_table
 
 def count_jobs_table(server_address, jobs, stats):
-    columns = ['ID', 'NAME', 'STATUS', 'TOTAL', 'LABELED', 'REVIEWED', 'ACCEPTED', 'REJECTED', 'CREATED_AT']
+    columns = ['ID', 'NAME', 'STATUS', 'CREATED_AT', 'TOTAL', 'LABELED', 'REVIEWED', 'ACCEPTED', 'REJECTED']
     data = []
     for job, stat in zip(jobs, stats):
         data_row = []
