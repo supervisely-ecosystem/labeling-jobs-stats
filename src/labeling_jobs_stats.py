@@ -189,10 +189,15 @@ def preprocessing(api: sly.Api, task_id, context, state, app_logger):
     my_app.stop()
 
 def main():
+    data = {
+        "jobStatusesTable": {"columns": [], "data": []},
+        "imageStatusesTable": {"columns": [], "data": []},
+        "jobsTable": {"columns": [], "data": []},
+    }
     initial_events = [{"state": None, "context": None, "command": "preprocessing"}]
 
     # Run application service
-    my_app.run(initial_events=initial_events)
+    my_app.run(data=data, initial_events=initial_events)
 
 
 if __name__ == "__main__":
