@@ -3,7 +3,8 @@
   "type": "app",
   "categories": [
     "collaboration",
-    "statistics"
+    "statistics",
+    "visualization-stats"
   ],
   "description": "General statistics for all labeling jobs in team",
   "docker_image": "supervisely/base-py-sdk:6",
