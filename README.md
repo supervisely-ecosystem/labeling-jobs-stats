@@ -1,6 +1,6 @@
 <div align="center" markdown>
 
-<img src="https://i.imgur.com/XThSU5x.png"/>
+<img src="https://user-images.githubusercontent.com/48245050/182364955-f204eb0a-ea3a-4072-a6cb-eed22b94946d.png"/>
 
 # Labeling Jobs Stats
 
