@@ -22,7 +22,7 @@
 
 Report provides both high-level and detailed statistics for all labeling jobs in a team.
 
-<img src="https://i.imgur.com/8OtF0I2.png"/>
+<img src="media/ov1.png"/>
 
 ## How To Run
 
@@ -30,12 +30,12 @@ Report provides both high-level and detailed statistics for all labeling jobs in
 
 Add app from ecosystem. Go to `Apps` page and press `Run` button.
 
-<img src="https://i.imgur.com/qseZSxh.png"/>
+<img src="media/htr1.png"/>
 
 
 ## History of runs
 
 To see history of runs go to `Apps` page, click to applications sessions. In front of every session you can see buttons (`View` and `Logs`). Press `View` button to open stopped application session in `Read Only` mode.
 
-<img src="https://i.imgur.com/G1CUssB.png"/>
+<img src="media/h1.png"/>
 
