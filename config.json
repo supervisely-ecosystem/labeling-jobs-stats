@@ -1,20 +1,20 @@
 {
-  "name": "Labeling Jobs Stats",
-  "type": "app",
-  "categories": [
-    "collaboration",
-    "statistics",
-    "visualization stats"
-  ],
-  "description": "General statistics for all labeling jobs in team",
-  "docker_image": "supervisely/base-py-sdk:6.35.0",
-  "main_script": "src/labeling_jobs_stats.py",
-  "modal_template": "src/modal.html",
-  "modal_template_state": {},
-  "gui_template": "src/gui.html",
-  "task_location": "application_sessions",
-  "isolate": true,
-  "icon": "https://img.icons8.com/color/96/000000/group-of-projects.png",
-  "icon_background": "#FFFFFF",
-  "poster": "https://user-images.githubusercontent.com/48245050/182364955-f204eb0a-ea3a-4072-a6cb-eed22b94946d.png"
+    "name": "Labeling Jobs Stats",
+    "type": "app",
+    "categories": [
+        "collaboration",
+        "statistics",
+        "visualization stats"
+    ],
+    "description": "General statistics for all labeling jobs in team",
+    "docker_image": "supervisely/collaboration:0.0.1",
+    "main_script": "src/labeling_jobs_stats.py",
+    "modal_template": "src/modal.html",
+    "modal_template_state": {},
+    "gui_template": "src/gui.html",
+    "task_location": "application_sessions",
+    "isolate": true,
+    "icon": "https://img.icons8.com/color/96/000000/group-of-projects.png",
+    "icon_background": "#FFFFFF",
+    "poster": "https://user-images.githubusercontent.com/48245050/182364955-f204eb0a-ea3a-4072-a6cb-eed22b94946d.png"
 }
