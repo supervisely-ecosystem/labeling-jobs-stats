@@ -1,11 +1,18 @@
 <div>
-    <sly-card title="Jobs statuses" subtitle="Number of jobs in every status">
-        <sly-table  :options="{perPage: 15, pageSizes: [15, 30]}" :content="data.jobStatusesTable"></sly-table>
-    </sly-card>
-    <sly-card title="Images statuses" subtitle="Number of images in every status" class="mt15">
-        <sly-table :options="{perPage: 15, pageSizes: [15, 30]}" :content="data.imageStatusesTable"></sly-table>
-    </sly-card>
+    <div v-if="data.jobsExist">
+        <sly-card title="Jobs statuses" subtitle="Number of jobs in every status">
+            <sly-table :options="{perPage: 15, pageSizes: [15, 30]}" :content="data.jobStatusesTable"></sly-table>
+        </sly-card>
+        <sly-card title="Images statuses" subtitle="Number of images in every status" class="mt15">
+            <sly-table :options="{perPage: 15, pageSizes: [15, 30]}" :content="data.imageStatusesTable"></sly-table>
+        </sly-card>
         <sly-card title="Labeling jobs" subtitle="All jobs in team (columns are sortable)" class="mt15">
-        <sly-table :options="{perPage: 40, pageSizes: [15, 30, 40, 100]}" :content="data.jobsTable"></sly-table>
-    </sly-card>
+            <sly-table :options="{perPage: 40, pageSizes: [15, 30, 40, 100]}" :content="data.jobsTable"></sly-table>
+        </sly-card>
+    </div>
+    <div >
+    <sly-notification-2 v-if="!data.jobsExist" class="mt10" :options="data.options">
+        <div>No jobs in current team. Please create jobs first and then run this app again.</div>
+    </sly-notification-2>  
+    </div>
 </div>
