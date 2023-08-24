@@ -1,10 +1,14 @@
 import os
 from dateutil import parser
-import supervisely_lib as sly
-from supervisely_lib.labeling_jobs.utils import is_completed, is_stopped, is_not_started, is_on_labeling, is_on_review, \
+import supervisely as sly
+from supervisely.labeling_jobs.utils import is_completed, is_stopped, is_not_started, is_on_labeling, is_on_review, \
     is_review_started, is_labeling_started, total_items_count, labeled_items_count, reviewed_items_count, \
     accepted_items_count, rejected_items_count, get_job_url
+from dotenv import load_dotenv
 
+if sly.is_development():
+    load_dotenv("local.env")
+    load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 
 my_app = sly.AppService()
@@ -171,19 +175,22 @@ def count_jobs_table(server_address, jobs, stats):
 def preprocessing(api: sly.Api, task_id, context, state, app_logger):
     team = api.team.get_info_by_id(TEAM_ID)
     jobs = api.labeling_job.get_list(team.id)
-    if len(jobs) == 0:
-        raise RuntimeError("There are no labeling jobs in current team {!r}".format(team.name))
-    stats = [api.labeling_job.get_stats(job.id) for job in jobs]
+    if len(jobs) > 0:
+        # raise RuntimeError("There are no labeling jobs in current team {!r}".format(team.name))
+        stats = [api.labeling_job.get_stats(job.id) for job in jobs]
 
-    job_statuses_table = count_jobs_statuses(jobs)
-    image_statuses_table = count_images_statuses(jobs)
-    jobs_table = count_jobs_table(api.server_address, jobs, stats)
+        job_statuses_table = count_jobs_statuses(jobs)
+        image_statuses_table = count_images_statuses(jobs)
+        jobs_table = count_jobs_table(api.server_address, jobs, stats)
 
-    fields = [
-        {"field": "data.jobStatusesTable", "payload": job_statuses_table},
-        {"field": "data.imageStatusesTable", "payload": image_statuses_table},
-        {"field": "data.jobsTable", "payload": jobs_table},
-    ]
+        fields = [
+            {"field": "data.jobStatusesTable", "payload": job_statuses_table},
+            {"field": "data.imageStatusesTable", "payload": image_statuses_table},
+            {"field": "data.jobsTable", "payload": jobs_table},
+        ]
+    else:
+        app_logger.warn(f"There are no labeling jobs in current team {team.name}")
+        fields = [{"field": "data.jobsExist", "payload": False}]
     api.task.set_fields(task_id, fields)
 
     my_app.stop()
@@ -193,6 +200,7 @@ def main():
         "jobStatusesTable": {"columns": [], "data": []},
         "imageStatusesTable": {"columns": [], "data": []},
         "jobsTable": {"columns": [], "data": []},
+        "jobsExist": True
     }
     initial_events = [{"state": None, "context": None, "command": "preprocessing"}]
 
