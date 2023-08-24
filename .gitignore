@@ -1,1 +1,4 @@
 /secret_debug.env
+supervisely
+.venv
+venv
