@@ -7,7 +7,7 @@
         "visualization stats"
     ],
     "description": "General statistics for all labeling jobs in team",
-    "docker_image": "supervisely/collaboration:0.0.1",
+    "docker_image": "supervisely/collaboration:6.72.112",
     "main_script": "src/labeling_jobs_stats.py",
     "modal_template": "src/modal.html",
     "modal_template_state": {},
