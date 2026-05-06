@@ -1,6 +1,7 @@
 {
     "name": "Labeling Jobs Stats",
     "type": "app",
+    "instance_version": "6.15.60",
     "categories": [
         "collaboration",
         "statistics",
